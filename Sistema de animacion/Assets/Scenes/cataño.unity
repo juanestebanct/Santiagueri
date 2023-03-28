@@ -827,6 +827,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3786110205319030813, guid: a45ab7e349fe5354ca5df390240c3691,
+        type: 3}
+      propertyPath: proceduralInfluence
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3786110206051535665, guid: a45ab7e349fe5354ca5df390240c3691,
         type: 3}
       propertyPath: m_RootOrder
