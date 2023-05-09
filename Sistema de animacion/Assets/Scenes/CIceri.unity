@@ -2283,38 +2283,6 @@ MonoBehaviour:
       z: 1
     m_MaintainPositionOffset: 0
     m_MaintainRotationOffset: 0
---- !u!114 &2016164378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675875062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f77e29cd1664774383d37e8843a9dec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 330585546}
-  inputValue: {x: 0, y: 0}
-  smoothInput: {x: 0, y: 0}
-  speed: 0
-  Accelelation: 0
-  OnMoves:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2016164383}
-        m_TargetAssemblyTypeName: AnimationController, Assembly-CSharp
-        m_MethodName: setMotionValue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2016164379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2343,7 +2311,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2016164378}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SimpleMovement, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
