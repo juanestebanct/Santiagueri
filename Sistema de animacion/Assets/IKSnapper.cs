@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -6,9 +9,11 @@ public class IKSnapper : MonoBehaviour
     [SerializeField][Range(0,1)] private float proceduralInfluence;
     [SerializeField] private MultiParentConstraint[] animatedBones;
     [SerializeField] private MultiParentConstraint[] proceduralBones;
+    [SerializeField] private AnimationCurve activationAnimation;
+    [SerializeField] private AnimationCurve deactivationAnimation;
 
 
-
+    private bool currentOverride;
     private void UpdateInfluence(float weight)
     {
         if (animatedBones == null) return;
@@ -29,11 +34,24 @@ public class IKSnapper : MonoBehaviour
     }
     public void OverrideIK(bool state)
     {
-        proceduralInfluence = state ? 1 : 0;
-        UpdateInfluence(proceduralInfluence);
+       
+        if (state != currentOverride)
+        {
+            currentOverride = state;
+            StartCoroutine(AnimaeInfluence());
+        }
     }
-    private void OnValidate()
+    IEnumerator AnimaeInfluence()
     {
-        UpdateInfluence(proceduralInfluence);
+        //actualizacion las influencias
+
+        AnimationCurve curve = currentOverride? activationAnimation : deactivationAnimation;
+        for (float time = 0; time < 1f; time += Time.deltaTime)
+        {
+            proceduralInfluence = curve.Evaluate(time);
+            UpdateInfluence(proceduralInfluence);
+
+            yield return null;
+        }
     }
 }
