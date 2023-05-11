@@ -7,6 +7,8 @@ public class IKSnapper : MonoBehaviour
     [SerializeField] private MultiParentConstraint[] animatedBones;
     [SerializeField] private MultiParentConstraint[] proceduralBones;
 
+
+
     private void UpdateInfluence(float weight)
     {
         if (animatedBones == null) return;
@@ -25,7 +27,11 @@ public class IKSnapper : MonoBehaviour
             proceduralConstraint.weight = 1 - weight;
         }
     }
-    
+    public void OverrideIK(bool state)
+    {
+        proceduralInfluence = state ? 1 : 0;
+        UpdateInfluence(proceduralInfluence);
+    }
     private void OnValidate()
     {
         UpdateInfluence(proceduralInfluence);

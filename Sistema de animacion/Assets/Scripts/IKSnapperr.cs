@@ -25,6 +25,11 @@ public class IKSnapperr: MonoBehaviour
             proceduralConstraint.weight = 1 - weight;
         }
     }
+    public void OverrideIK(bool state)
+    {
+        proceduralInfluence = state ? 1 : 0;
+        UpdateInfluence(proceduralInfluence);
+    }
     
     private void OnValidate()
     {
