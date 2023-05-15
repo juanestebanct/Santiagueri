@@ -9,15 +9,19 @@ using UnityEngine.Animations.Rigging;
 public class SeePoint : MonoBehaviour
 {
     private const float REFRESH_DELAY = 0.5f;
-
+    [SerializeField][Range(0, 1)] private float proceduralInfluence;
     [SerializeField] private float detectionRadius;
     [SerializeField] private LayerMask detectionMask;
     [SerializeField] private Transform referencePoint;
     [SerializeField] private Transform raycastReference;
 
     [SerializeField] private MultiAimConstraint[] multiAimConstraints;
+
+    [SerializeField] private AnimationCurve activationAnimation;
+    [SerializeField] private AnimationCurve deactivationAnimation;
     //Encontrar objetos idoneos
     public bool IsCollicion;
+    public bool currentOverride;
     /// <summary>
     /// Returns all suitable objects for IK Snap
     /// </summary>
@@ -70,24 +74,6 @@ public class SeePoint : MonoBehaviour
         nearestPoint = transform.position;
         return false;
     }
-
-    void Update()
-    {
-        if (!IsCollicion)
-        {
-            foreach (var bone in multiAimConstraints)
-            {
-                bone.weight = 0f;
-            }
-        }
-        else
-        {
-            foreach (var bone in multiAimConstraints)
-            {
-                bone.weight = 1f;
-            }
-        }
-    }
     private void LateUpdate()
     {
         if (GetNearestPositionForSnap(Query(), out Vector3 nearestPosition))
@@ -97,17 +83,52 @@ public class SeePoint : MonoBehaviour
             //Mandar la señal
             Debug.Log("collider");
             IsCollicion = true;
+
+            OverrideIK(true);
         }
         else
         {
-            gameObject.SendMessage("OverrideIK", false, SendMessageOptions.DontRequireReceiver);
             Debug.Log("on collider");
             IsCollicion = false;
+            OverrideIK(false);
+
+        }
+    }
+    public void OverrideIK(bool state)
+    {
+
+        if (state != currentOverride)
+        {
+            Debug.Log("cambio "+ state);
+            currentOverride = state;
+            StartCoroutine(AnimaeInfluence());
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(referencePoint.position, detectionRadius);
+    }
+    IEnumerator AnimaeInfluence()
+    {
+        //actualizacion las influencias
+
+        AnimationCurve curve = IsCollicion ?  deactivationAnimation: activationAnimation;
+        for (float time = 0; time < 1f; time += Time.deltaTime*1f)
+        {
+            proceduralInfluence = curve.Evaluate(time);
+            UpdateInfluence(proceduralInfluence);
+            yield return null;
+        }
+    }
+    private void UpdateInfluence(float weight)
+    {
+        if (multiAimConstraints == null) return;
+
+        foreach (MultiAimConstraint multiAimConstraint in multiAimConstraints)
+        {
+            if (multiAimConstraint == null) continue;
+            multiAimConstraint.weight = 1 - weight;
+        }
     }
 }
