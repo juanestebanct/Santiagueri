@@ -31,10 +31,10 @@ public class SimpleMovement : MonoBehaviour
     }
     private void Update()
     {
-        smoothInput = Vector2.Lerp(smoothInput,inputValue,Time.deltaTime*10);
+        smoothInput = Vector2.Lerp(smoothInput,inputValue,Time.deltaTime* Accelelation);
         Vector3 forwardVector = Vector3.ProjectOnPlane(cameraTransform.forward, transform.up);
         Vector3 rightVector = cameraTransform.right;
-        Vector3 motionVector = forwardVector * smoothInput.y + rightVector * smoothInput.x;
+        Vector3 motionVector = (forwardVector * smoothInput.y + rightVector * smoothInput.x)*speed*1f;
         transform.Translate(motionVector *Time.deltaTime, Space.World);
         OnMoves?.Invoke(smoothInput.magnitude);
         if (motionVector.magnitude > 0.01)
