@@ -20,4 +20,8 @@ public class AnimationController : MonoBehaviour
     {
 
     }
+    public void Jump_Animate()
+    {
+        GetComponent<Animator>().SetTrigger("Jump");
+    }
 }

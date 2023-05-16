@@ -23,24 +23,40 @@ public class SimpleMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float Accelelation;
     [SerializeField] private UntyFloatEvent OnMoves;
+    [SerializeField] private float Forcejump;
+    [SerializeField] public UnityEvent OnJump;
+
+    public Rigidbody rb;
     public void Move(CallbackContext contex)
     {
         inputValue = contex.ReadValue<Vector2>();
-       
-       
+        rb= GetComponent<Rigidbody>();
+      
+    }
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+      
+            Debug.Log("salto");
+            rb.AddForce(Vector3.up * Forcejump, ForceMode.VelocityChange);
+        if (context.action.WasPerformedThisFrame())
+        {
+            OnJump.Invoke();
+        }
     }
     private void Update()
     {
-        smoothInput = Vector2.Lerp(smoothInput,inputValue,Time.deltaTime* Accelelation);
+        smoothInput = Vector2.Lerp(smoothInput, inputValue, Time.deltaTime * Accelelation);
         Vector3 forwardVector = Vector3.ProjectOnPlane(cameraTransform.forward, transform.up);
         Vector3 rightVector = cameraTransform.right;
-        Vector3 motionVector = (forwardVector * smoothInput.y + rightVector * smoothInput.x)*speed*1f;
-        transform.Translate(motionVector *Time.deltaTime, Space.World);
+        Vector3 motionVector = (forwardVector * smoothInput.y + rightVector * smoothInput.x) * speed * 1f;
+        transform.Translate(motionVector * Time.deltaTime, Space.World);
         OnMoves?.Invoke(smoothInput.magnitude);
         if (motionVector.magnitude > 0.01)
         {
             transform.forward = motionVector;
         }
+    
     }
 
 }
