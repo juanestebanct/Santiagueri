@@ -10748,6 +10748,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 330585545}
     - target: {fileID: 1765903737, guid: 7af3a775815151e409c4c7eabdce82da, type: 3}
+      propertyPath: Forcejump
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765903737, guid: 7af3a775815151e409c4c7eabdce82da, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 330585546}
