@@ -2156,7 +2156,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878428506875197160, guid: f26af6ee889b76a46bd12a4abd862f45,
         type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878428506875197160, guid: f26af6ee889b76a46bd12a4abd862f45,
+        type: 3}
       propertyPath: Forcejump
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878428506875197160, guid: f26af6ee889b76a46bd12a4abd862f45,
+        type: 3}
+      propertyPath: Accelelation
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1878428506875197160, guid: f26af6ee889b76a46bd12a4abd862f45,
@@ -2169,6 +2179,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 1878428506875197165, guid: f26af6ee889b76a46bd12a4abd862f45,
+        type: 3}
+      propertyPath: TimeIdle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878428506875197165, guid: f26af6ee889b76a46bd12a4abd862f45,
+        type: 3}
+      propertyPath: CicleIdle
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f26af6ee889b76a46bd12a4abd862f45, type: 3}
 --- !u!1 &1378758091

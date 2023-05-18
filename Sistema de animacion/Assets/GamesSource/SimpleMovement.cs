@@ -12,7 +12,9 @@ namespace grupo
 {
     [Serializable]
     public class UntyFloatEvent: UnityEvent<float> { }
+
 }
+
 public class SimpleMovement : MonoBehaviour
 {
 
@@ -26,6 +28,9 @@ public class SimpleMovement : MonoBehaviour
     [SerializeField] private float Forcejump;
     [SerializeField] public UnityEvent OnJump;
 
+
+    private bool isGrounded;
+
     public Rigidbody rb;
     public void Move(CallbackContext contex)
     {
@@ -34,15 +39,20 @@ public class SimpleMovement : MonoBehaviour
       
     }
 
+
     public void Jump(InputAction.CallbackContext context)
     {
-      
+        if (IsGrounded())
+        {
+
             Debug.Log("salto");
             rb.AddForce(Vector3.up * Forcejump, ForceMode.VelocityChange);
-        if (context.action.WasPerformedThisFrame())
-        {
-            OnJump.Invoke();
+            if (context.action.WasPerformedThisFrame())
+            {
+                OnJump.Invoke();
+            }
         }
+    
     }
     private void Update()
     {
@@ -51,12 +61,17 @@ public class SimpleMovement : MonoBehaviour
         Vector3 rightVector = cameraTransform.right;
         Vector3 motionVector = (forwardVector * smoothInput.y + rightVector * smoothInput.x) * speed * 1f;
         transform.Translate(motionVector * Time.deltaTime, Space.World);
-        OnMoves?.Invoke(smoothInput.magnitude);
+        OnMoves?.Invoke(smoothInput
+            .magnitude);
         if (motionVector.magnitude > 0.01)
         {
             transform.forward = motionVector;
         }
     
+    }
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 0.1f);
     }
 
 }
