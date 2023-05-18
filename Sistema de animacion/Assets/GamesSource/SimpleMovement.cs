@@ -77,6 +77,10 @@ public class SimpleMovement : MonoBehaviour
                 OnJump.Invoke();
             }
         }
+        else
+        {
+            Debug.Log("no puede saltar");
+        }
     
     }
     private void Update()
@@ -99,6 +103,7 @@ public class SimpleMovement : MonoBehaviour
     }
     private bool IsGrounded()
     {
+        Debug.Log("toca el suelo");
         return Physics.Raycast(transform.position, Vector3.down, 0.1f);
     }
     IEnumerator TimeDead()

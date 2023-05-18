@@ -10972,7 +10972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765903737, guid: 7af3a775815151e409c4c7eabdce82da, type: 3}
       propertyPath: Forcejump
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1765903737, guid: 7af3a775815151e409c4c7eabdce82da, type: 3}
       propertyPath: cameraTransform
@@ -11033,6 +11033,14 @@ PrefabInstance:
     - target: {fileID: 1765903737, guid: 7af3a775815151e409c4c7eabdce82da, type: 3}
       propertyPath: DeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765903740, guid: 7af3a775815151e409c4c7eabdce82da, type: 3}
+      propertyPath: m_Height
+      value: 21.154375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765903740, guid: 7af3a775815151e409c4c7eabdce82da, type: 3}
+      propertyPath: m_Center.y
+      value: 10.250115
       objectReference: {fileID: 0}
     - target: {fileID: 8202784614608011261, guid: 7af3a775815151e409c4c7eabdce82da,
         type: 3}
