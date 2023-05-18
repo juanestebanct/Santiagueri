@@ -2,6 +2,7 @@ using grupo;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -26,10 +27,16 @@ public class SimpleMovement : MonoBehaviour
     [SerializeField] private float Accelelation;
     [SerializeField] private UntyFloatEvent OnMoves;
     [SerializeField] private float Forcejump;
-    [SerializeField] public UnityEvent OnJump;
+    [SerializeField] private int Live;
+    private bool CanResiveDamege=true;
 
+     public UnityEvent OnJump;
+     public UnityEvent OnHit;
+     public UnityEvent DeadEvent;
+     public bool Dead;
+   
 
-    private bool isGrounded;
+     
 
     public Rigidbody rb;
     public void Move(CallbackContext contex)
@@ -39,12 +46,30 @@ public class SimpleMovement : MonoBehaviour
       
     }
 
+    public void OnDamge()
+    {
+        if (CanResiveDamege && !Dead)
+        {
+            Live--;
+            Debug.Log("se invoco el evetno desde simpleMovement ");
+            OnHit.Invoke();
+            CanResiveDamege = false;
+            StartCoroutine(TimeDead());
+            if (Live<=0)
+            {
+                Dead = true;
+                DeadEvent.Invoke();
+                Debug.Log("Muerto ");
+            }
+        }
+       
+    }
+
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (IsGrounded())
+        if (IsGrounded() && !Dead)
         {
-
             Debug.Log("salto");
             rb.AddForce(Vector3.up * Forcejump, ForceMode.VelocityChange);
             if (context.action.WasPerformedThisFrame())
@@ -56,16 +81,19 @@ public class SimpleMovement : MonoBehaviour
     }
     private void Update()
     {
-        smoothInput = Vector2.Lerp(smoothInput, inputValue, Time.deltaTime * Accelelation);
-        Vector3 forwardVector = Vector3.ProjectOnPlane(cameraTransform.forward, transform.up);
-        Vector3 rightVector = cameraTransform.right;
-        Vector3 motionVector = (forwardVector * smoothInput.y + rightVector * smoothInput.x) * speed * 1f;
-        transform.Translate(motionVector * Time.deltaTime, Space.World);
-        OnMoves?.Invoke(smoothInput
-            .magnitude);
-        if (motionVector.magnitude > 0.01)
+        if (!Dead)
         {
-            transform.forward = motionVector;
+            smoothInput = Vector2.Lerp(smoothInput, inputValue, Time.deltaTime * Accelelation);
+            Vector3 forwardVector = Vector3.ProjectOnPlane(cameraTransform.forward, transform.up);
+            Vector3 rightVector = cameraTransform.right;
+            Vector3 motionVector = (forwardVector * smoothInput.y + rightVector * smoothInput.x) * speed * 1f;
+            transform.Translate(motionVector * Time.deltaTime, Space.World);
+            OnMoves?.Invoke(smoothInput
+                .magnitude);
+            if (motionVector.magnitude > 0.01)
+            {
+                transform.forward = motionVector;
+            }
         }
     
     }
@@ -73,5 +101,9 @@ public class SimpleMovement : MonoBehaviour
     {
         return Physics.Raycast(transform.position, Vector3.down, 0.1f);
     }
-
+    IEnumerator TimeDead()
+    {
+        yield return new WaitForSeconds(1f);
+        CanResiveDamege = true;
+    }
 }

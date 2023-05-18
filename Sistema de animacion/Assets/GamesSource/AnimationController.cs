@@ -11,44 +11,64 @@ public class AnimationController : MonoBehaviour
     public float CicleIdle;
     public bool idle;
     public int TimeIdle;
+
+    public SimpleMovement Player;
     public void Start()
     {
         timeChangeAnimation = CicleIdle;
     }
     public void setMotionValue(float value)
     {
-        GetComponent<Animator>().SetFloat("Speed",value);
-        if (value <= 0.1)
+        if (!Player.Dead)
         {
-            timeChangeAnimation-= Time.deltaTime;
-            Debug.Log("idle"+ timeChangeAnimation);
-            if (timeChangeAnimation < 0 )
+            GetComponent<Animator>().SetFloat("Speed", value);
+            if (value <= 0.1)
             {
-          
-                GetComponent<Animator>().SetTrigger("indie");
-                 
-                timeChangeAnimation = TimeIdle+ CicleIdle;
-                      
-            }
+                timeChangeAnimation -= Time.deltaTime;
+               // Debug.Log("idle" + timeChangeAnimation);
+                if (timeChangeAnimation < 0)
+                {
 
+                    GetComponent<Animator>().SetTrigger("indie");
+
+                    timeChangeAnimation = TimeIdle + CicleIdle;
+
+                }
+
+            }
+            else
+            {
+                timeChangeAnimation = CicleIdle;
+            }
         }
-        else
-        {
-            timeChangeAnimation = CicleIdle;
-        }
+      
     }
     public void setAttactkTrigger()
     {
-        GetComponent<Animator>().SetTrigger("Atack");
-        timeChangeAnimation = CicleIdle;
+        if (!Player.Dead)
+        {
+            GetComponent<Animator>().SetTrigger("Atack");
+            timeChangeAnimation = CicleIdle;
+        }
+            
     }
     public void SetDamageTrigger()
     {
+        Debug.Log("se invoco el evetno desde animator ");
+        GetComponent<Animator>().SetTrigger("Damage");
 
     }
     public void Jump_Animate()
     {
-        GetComponent<Animator>().SetTrigger("Jump");
-        timeChangeAnimation = CicleIdle;
+        if (!Player.Dead)
+        {
+            GetComponent<Animator>().SetTrigger("Jump");
+            timeChangeAnimation = CicleIdle;
+        }
+    }
+
+    public void Dead()
+    {
+        GetComponent<Animator>().SetTrigger("Dead");
     }
 }
