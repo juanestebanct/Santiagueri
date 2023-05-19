@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using CallbackContext = UnityEngine.InputSystem.InputAction.CallbackContext;
 
 namespace grupo
@@ -60,6 +61,7 @@ public class SimpleMovement : MonoBehaviour
                 Dead = true;
                 DeadEvent.Invoke();
                 Debug.Log("Muerto ");
+                StartCoroutine(DeadRespawn());
             }
         }
        
@@ -110,5 +112,10 @@ public class SimpleMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         CanResiveDamege = true;
+    }
+    IEnumerator DeadRespawn()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("CIceri");
     }
 }
