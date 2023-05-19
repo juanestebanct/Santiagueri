@@ -1,0 +1,263 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BaquirMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_clav_left.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_clav_right.76.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_left_twist1.73.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_left_twist2.74.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_left_twist3.75.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_lower_left.54.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_lower_right.78.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_right_twist1.97.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_right_twist2.98.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_right_twist3.99.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_upper_left.53.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-arm_upper_right.77.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_lower_left_1.101.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_lower_left_2.102.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_lower_left_3.103.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_lower_left_4.104.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_lower_right_1.106.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_lower_right_2.107.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_lower_right_3.108.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_lower_right_4.109.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_upper_left_1.111.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_upper_left_2.112.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_upper_right_1.114.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-backpack_upper_right_2.115.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-brow_left_back.28.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-brow_left_front.26.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-brow_left_mid.27.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-brow_left_root.25.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-brow_right_back.32.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-brow_right_front.30.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-brow_right_mid.31.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-brow_right_root.29.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-cheek_left.36.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-cheek_right.37.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-cog
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-ear1_left.9.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-ear1_right.12.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-ear2_left.10.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-ear2_right.13.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eye_left.15.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eye_right.20.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eyelid_lower_left_back.19.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eyelid_lower_left_front.18.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eyelid_lower_right_back.24.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eyelid_lower_right_front.23.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eyelid_upper_left_back.17.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eyelid_upper_left_front.16.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eyelid_upper_right_back.22.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-eyelid_upper_right_front.21.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_middle1_left.64.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_middle1_right.88.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_middle2_left.65.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_middle2_right.89.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_middle3_left.66.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_middle3_right.90.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pinkie1_left.68.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pinkie1_right.92.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pinkie2_left.69.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pinkie2_right.93.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pinkie3_left.70.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pinkie3_right.94.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pointer1_left.60.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pointer1_right.84.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pointer2_left.61.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pointer2_right.85.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pointer3_left.62.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-finger_pointer3_right.86.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-foot_left.124.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-foot_right.124.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-hand_left.55.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-hand_right.79.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-head.8
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-hips
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-inside_toe_left.125.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-inside_toe_right.125.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-jaw.47
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-leg_lower_left.122.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-leg_lower_right.122.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-leg_upper_left.121.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-leg_upper_right.121.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-leos_sake.128.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_left_bottom1.48.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_left_bottom2.49.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_left_corner.42.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_left_top1.39.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_left_top2.40.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_left_top3.41.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_right_bottom1.50.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_right_bottom2.51.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_right_corner.46.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_right_top1.43.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_right_top2.44.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_right_top3.45.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-lip_top_all.38
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-middle_toe_left.126.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-middle_toe_right.126.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-muzzle_left.34.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-muzzle_right.35.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-neck.7
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-nose.33
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-outside_toe_left.127.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-outside_toe_right.127.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-scarf_cloth1.118.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-scarf_cloth2.119.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-scarf_knot.117.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-spine_1
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-spine_2
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-spine_3
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-tail_1
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-tail_2
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-tail_3
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-tail_4
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-tail_root
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-thumb1_left.56.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-thumb1_right.80.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-thumb2_left.57.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-thumb2_right.81.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-thumb3_left.58.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-thumb3_right.82.R
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-zleg_left.123.L
+    m_Weight: 1
+  - m_Path: Armature_BAQUIR/ROOT/DEF-zleg_right.123.R
+    m_Weight: 1
+  - m_Path: BAQUIR
+    m_Weight: 1
